@@ -19,6 +19,7 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task3.V28.Lib
             }
 
             return matrix;
-        }  
+        }
     }
 }
+        

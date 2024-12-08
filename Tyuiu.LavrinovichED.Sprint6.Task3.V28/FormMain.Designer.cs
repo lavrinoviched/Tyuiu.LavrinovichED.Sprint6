@@ -29,21 +29,22 @@
         private void InitializeComponent()
         {
             groupBoxTask_LED = new GroupBox();
-            dataGridView_LED = new DataGridView();
+            dataGridViewVar_LED = new DataGridView();
             labelTask_LED = new Label();
             groupBoxResult_LED = new GroupBox();
+            dataGridViewResult_LED = new DataGridView();
             buttonDone_LED = new Button();
             buttonHelp_LED = new Button();
             labelResult_LED = new Label();
-            textBoxResult_LED = new TextBox();
             groupBoxTask_LED.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView_LED).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewVar_LED).BeginInit();
             groupBoxResult_LED.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewResult_LED).BeginInit();
             SuspendLayout();
             // 
             // groupBoxTask_LED
             // 
-            groupBoxTask_LED.Controls.Add(dataGridView_LED);
+            groupBoxTask_LED.Controls.Add(dataGridViewVar_LED);
             groupBoxTask_LED.Controls.Add(labelTask_LED);
             groupBoxTask_LED.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
             groupBoxTask_LED.Location = new Point(12, 12);
@@ -53,15 +54,15 @@
             groupBoxTask_LED.TabStop = false;
             groupBoxTask_LED.Text = "Условие";
             // 
-            // dataGridView_LED
+            // dataGridViewVar_LED
             // 
-            dataGridView_LED.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_LED.Location = new Point(374, 38);
-            dataGridView_LED.Name = "dataGridView_LED";
-            dataGridView_LED.RowHeadersVisible = false;
-            dataGridView_LED.RowHeadersWidth = 51;
-            dataGridView_LED.Size = new Size(283, 224);
-            dataGridView_LED.TabIndex = 1;
+            dataGridViewVar_LED.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewVar_LED.Location = new Point(374, 38);
+            dataGridViewVar_LED.Name = "dataGridViewVar_LED";
+            dataGridViewVar_LED.RowHeadersVisible = false;
+            dataGridViewVar_LED.RowHeadersWidth = 51;
+            dataGridViewVar_LED.Size = new Size(283, 224);
+            dataGridViewVar_LED.TabIndex = 1;
             // 
             // labelTask_LED
             // 
@@ -74,16 +75,26 @@
             // 
             // groupBoxResult_LED
             // 
+            groupBoxResult_LED.Controls.Add(dataGridViewResult_LED);
             groupBoxResult_LED.Controls.Add(buttonDone_LED);
             groupBoxResult_LED.Controls.Add(buttonHelp_LED);
             groupBoxResult_LED.Controls.Add(labelResult_LED);
-            groupBoxResult_LED.Controls.Add(textBoxResult_LED);
             groupBoxResult_LED.Location = new Point(681, 12);
             groupBoxResult_LED.Name = "groupBoxResult_LED";
             groupBoxResult_LED.Size = new Size(250, 320);
             groupBoxResult_LED.TabIndex = 1;
             groupBoxResult_LED.TabStop = false;
             groupBoxResult_LED.Text = "Вывод данных";
+            // 
+            // dataGridViewResult_LED
+            // 
+            dataGridViewResult_LED.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewResult_LED.Location = new Point(15, 61);
+            dataGridViewResult_LED.Name = "dataGridViewResult_LED";
+            dataGridViewResult_LED.RowHeadersVisible = false;
+            dataGridViewResult_LED.RowHeadersWidth = 51;
+            dataGridViewResult_LED.Size = new Size(229, 188);
+            dataGridViewResult_LED.TabIndex = 2;
             // 
             // buttonDone_LED
             // 
@@ -114,14 +125,6 @@
             labelResult_LED.TabIndex = 1;
             labelResult_LED.Text = "Результат";
             // 
-            // textBoxResult_LED
-            // 
-            textBoxResult_LED.Location = new Point(6, 69);
-            textBoxResult_LED.Name = "textBoxResult_LED";
-            textBoxResult_LED.ReadOnly = true;
-            textBoxResult_LED.Size = new Size(238, 27);
-            textBoxResult_LED.TabIndex = 0;
-            // 
             // FormMain_LED
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -135,9 +138,10 @@
             Load += FormMain_LED_Load;
             groupBoxTask_LED.ResumeLayout(false);
             groupBoxTask_LED.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView_LED).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewVar_LED).EndInit();
             groupBoxResult_LED.ResumeLayout(false);
             groupBoxResult_LED.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewResult_LED).EndInit();
             ResumeLayout(false);
         }
 
@@ -150,6 +154,7 @@
         private Button buttonHelp_LED;
         private Label labelResult_LED;
         private TextBox textBoxResult_LED;
-        private DataGridView dataGridView_LED;
+        private DataGridView dataGridViewVar_LED;
+        private DataGridView dataGridViewResult_LED;
     }
 }

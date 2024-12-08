@@ -16,6 +16,28 @@ namespace Tyuiu.LavrinovichEd.Sprint6.Task3.V28
                               {10, -2, 19, -4, -10 },
                               {6, -20, -4, 13, -14 }
                                                      };
+        private void FormMain_LED_Load(object sender, EventArgs e)
+        {
+            int rows = matrix.GetUpperBound(0) + 1;
+            int columns = matrix.Length / rows;
+
+            dataGridViewVar_LED.ColumnCount = columns;
+            dataGridViewVar_LED.RowCount = rows;
+
+            for (int i = 0; i < columns; i++)
+            {
+                dataGridViewVar_LED.Columns[i].Width = 25;
+            }
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    dataGridViewVar_LED.Rows[i].Cells[j].Value = Convert.ToString(matrix[i, j]);
+                }
+            }
+        }
+
 
         private void buttonHelp_LED_Click(object sender, EventArgs e)
         {
@@ -24,30 +46,26 @@ namespace Tyuiu.LavrinovichEd.Sprint6.Task3.V28
 
         private void buttonDone_LED_Click(object sender, EventArgs e)
         {
-            textBoxResult_LED.Text = Convert.ToString(ds.Calculate(matrix));
-        }
-
-        private void FormMain_LED_Load(object sender, EventArgs e)
-        {
+            int[,] res = ds.Calculate(matrix);
             int rows = matrix.GetUpperBound(0) + 1;
-            int colums = matrix.Length / rows;
+            int columns = matrix.Length / rows;
 
-            dataGridView_LED.ColumnCount = colums;
-            dataGridView_LED.RowCount = rows;
+            dataGridViewResult_LED.ColumnCount = columns;
+            dataGridViewResult_LED.RowCount = rows;
 
-            for (int i = 0; i < colums; i++)
+            for (int i = 0; i < columns; i++)
             {
-                dataGridView_LED.Columns[i].Width = 25;
+                dataGridViewResult_LED.Columns[i].Width = 25;
             }
 
             for (int i = 0; i < rows; i++)
-            { 
-                for (int j = 0; j < colums; j++) 
+            {
+                for (int j = 0; j < columns; j++)
                 {
-                    dataGridView_LED.Rows[i].Cells[j].Value = Convert.ToString(matrix[i, j]);
-                } 
+                    dataGridViewResult_LED.Rows[i].Cells[j].Value = Convert.ToString(res[i, j]);
+                }
             }
-        
         }
     }
-}
+}  
+

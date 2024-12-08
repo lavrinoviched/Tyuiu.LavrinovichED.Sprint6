@@ -59,7 +59,7 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task2.V14
             }
             catch 
             {
-                MessageBox.Show("¬ведены неверные данные", "ќшибка", MessageBoxButtons.OK);
+                MessageBox.Show("¬ведены неверные данные", "ќшибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 

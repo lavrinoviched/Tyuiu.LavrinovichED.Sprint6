@@ -96,7 +96,6 @@
             // textBoxTask_LED
             // 
             textBoxTask_LED.Location = new Point(6, 26);
-            textBoxTask_LED.Multiline = true;
             textBoxTask_LED.Name = "textBoxTask_LED";
             textBoxTask_LED.Size = new Size(270, 27);
             textBoxTask_LED.TabIndex = 0;

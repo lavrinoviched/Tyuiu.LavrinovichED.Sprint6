@@ -1,6 +1,6 @@
 ﻿namespace Tyuiu.LavrinovichED.Sprint6.Task2.V14
 {
-    partial class FormMain
+    partial class FormMain_LED
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain_LED));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -223,7 +223,7 @@
             labelResult_LED.TabIndex = 0;
             labelResult_LED.Text = "Результат";
             // 
-            // FormMain
+            // FormMain_LED
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -233,8 +233,8 @@
             Controls.Add(buttonHelp_LED);
             Controls.Add(groupBoxVar_LED);
             Controls.Add(groupBoxTask_LED);
-            Name = "FormMain";
-            Text = "Form1";
+            Name = "FormMain_LED";
+            Text = "Спринт 6 | Таск 2 | Вариант 14 | Лавринович Е.Д.";
             groupBoxTask_LED.ResumeLayout(false);
             groupBoxTask_LED.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTask_LED).EndInit();

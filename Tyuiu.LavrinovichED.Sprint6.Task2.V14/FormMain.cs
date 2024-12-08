@@ -3,9 +3,9 @@ using Tyuiu.LavrinovichED.Sprint6.Task2.V14.Lib;
 
 namespace Tyuiu.LavrinovichED.Sprint6.Task2.V14
 {
-    public partial class FormMain : Form
+    public partial class FormMain_LED : Form
     {
-        public FormMain()
+        public FormMain_LED()
         {
             InitializeComponent();
         }

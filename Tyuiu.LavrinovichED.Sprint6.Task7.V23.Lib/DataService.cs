@@ -25,7 +25,21 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23.Lib
                     arrayValues[r, c] = Convert.ToInt32(line_r[c]);
                 }
             }
+            rows = arrayValues.GetUpperBound(0) + 1;
+            cols = arrayValues.Length / rows;
+
+            int xRow = 4;
+
+            for (int r = 0; r < rows; r++)
+            {
+                for (int c = 0; c < cols; c++)
+                {
+                    if (arrayValues[xRow, c] > 2) arrayValues[xRow, c] = 2;
+                }
+            }
+
             return arrayValues;
+           
         }
 
     }

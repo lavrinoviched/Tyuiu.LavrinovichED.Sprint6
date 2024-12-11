@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain_LED));
             panelClick_LED = new Panel();
             groupBoxTask_LED = new GroupBox();
             textBoxTask_LED = new TextBox();
@@ -40,12 +41,12 @@
             buttonFile_LED = new Button();
             splitterClick_LED = new Splitter();
             panelVar_LED = new Panel();
+            groupBoxVar_LED = new GroupBox();
+            dataGridViewVar_LED = new DataGridView();
             panelResilt_LED = new Panel();
             splitterVAarResult_LED = new Splitter();
             openFileDialog_LED = new OpenFileDialog();
             toolTip_LED = new ToolTip(components);
-            groupBoxVar_LED = new GroupBox();
-            dataGridViewVar_LED = new DataGridView();
             groupBoxResult_LED = new GroupBox();
             dataGridViewResult_LED = new DataGridView();
             panelClick_LED.SuspendLayout();
@@ -113,43 +114,50 @@
             // 
             // buttonHels_LED
             // 
-            buttonHels_LED.Location = new Point(933, 12);
+            buttonHels_LED.FlatStyle = FlatStyle.Flat;
+            buttonHels_LED.Image = (Image)resources.GetObject("buttonHels_LED.Image");
+            buttonHels_LED.Location = new Point(933, 0);
             buttonHels_LED.Name = "buttonHels_LED";
-            buttonHels_LED.Size = new Size(94, 29);
+            buttonHels_LED.Size = new Size(94, 50);
             buttonHels_LED.TabIndex = 5;
-            buttonHels_LED.Text = "button4";
             toolTip_LED.SetToolTip(buttonHels_LED, "О приложении");
             buttonHels_LED.UseVisualStyleBackColor = true;
             // 
             // buttonPush_LED
             // 
-            buttonPush_LED.Location = new Point(212, 14);
+            buttonPush_LED.Enabled = false;
+            buttonPush_LED.FlatStyle = FlatStyle.Flat;
+            buttonPush_LED.Image = (Image)resources.GetObject("buttonPush_LED.Image");
+            buttonPush_LED.Location = new Point(212, 3);
             buttonPush_LED.Name = "buttonPush_LED";
-            buttonPush_LED.Size = new Size(94, 29);
+            buttonPush_LED.Size = new Size(94, 50);
             buttonPush_LED.TabIndex = 4;
-            buttonPush_LED.Text = "button3";
             toolTip_LED.SetToolTip(buttonPush_LED, "Сохранить");
             buttonPush_LED.UseVisualStyleBackColor = true;
             // 
             // buttonDone_LED
             // 
-            buttonDone_LED.Location = new Point(112, 14);
+            buttonDone_LED.Enabled = false;
+            buttonDone_LED.FlatStyle = FlatStyle.Flat;
+            buttonDone_LED.Image = (Image)resources.GetObject("buttonDone_LED.Image");
+            buttonDone_LED.Location = new Point(112, 3);
             buttonDone_LED.Name = "buttonDone_LED";
-            buttonDone_LED.Size = new Size(94, 29);
+            buttonDone_LED.Size = new Size(94, 47);
             buttonDone_LED.TabIndex = 3;
-            buttonDone_LED.Text = "button2";
             toolTip_LED.SetToolTip(buttonDone_LED, "Выполнить");
             buttonDone_LED.UseVisualStyleBackColor = true;
             // 
             // buttonFile_LED
             // 
-            buttonFile_LED.Location = new Point(12, 12);
+            buttonFile_LED.FlatStyle = FlatStyle.Flat;
+            buttonFile_LED.Image = (Image)resources.GetObject("buttonFile_LED.Image");
+            buttonFile_LED.Location = new Point(12, 3);
             buttonFile_LED.Name = "buttonFile_LED";
-            buttonFile_LED.Size = new Size(94, 29);
+            buttonFile_LED.Size = new Size(94, 47);
             buttonFile_LED.TabIndex = 2;
-            buttonFile_LED.Text = "button1";
             toolTip_LED.SetToolTip(buttonFile_LED, "Открыть файл");
             buttonFile_LED.UseVisualStyleBackColor = true;
+            buttonFile_LED.Click += buttonFile_LED_Click;
             // 
             // splitterClick_LED
             // 
@@ -170,6 +178,25 @@
             panelVar_LED.Name = "panelVar_LED";
             panelVar_LED.Size = new Size(513, 355);
             panelVar_LED.TabIndex = 1;
+            // 
+            // groupBoxVar_LED
+            // 
+            groupBoxVar_LED.Controls.Add(dataGridViewVar_LED);
+            groupBoxVar_LED.Location = new Point(6, 0);
+            groupBoxVar_LED.Name = "groupBoxVar_LED";
+            groupBoxVar_LED.Size = new Size(497, 352);
+            groupBoxVar_LED.TabIndex = 6;
+            groupBoxVar_LED.TabStop = false;
+            groupBoxVar_LED.Text = "Ввод данных";
+            // 
+            // dataGridViewVar_LED
+            // 
+            dataGridViewVar_LED.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewVar_LED.Location = new Point(3, 23);
+            dataGridViewVar_LED.Name = "dataGridViewVar_LED";
+            dataGridViewVar_LED.RowHeadersWidth = 51;
+            dataGridViewVar_LED.Size = new Size(494, 323);
+            dataGridViewVar_LED.TabIndex = 0;
             // 
             // panelResilt_LED
             // 
@@ -194,25 +221,6 @@
             // toolTip_LED
             // 
             toolTip_LED.ToolTipTitle = "Подсказка";
-            // 
-            // groupBoxVar_LED
-            // 
-            groupBoxVar_LED.Controls.Add(dataGridViewVar_LED);
-            groupBoxVar_LED.Location = new Point(6, 0);
-            groupBoxVar_LED.Name = "groupBoxVar_LED";
-            groupBoxVar_LED.Size = new Size(497, 352);
-            groupBoxVar_LED.TabIndex = 6;
-            groupBoxVar_LED.TabStop = false;
-            groupBoxVar_LED.Text = "Ввод данных";
-            // 
-            // dataGridViewVar_LED
-            // 
-            dataGridViewVar_LED.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewVar_LED.Location = new Point(3, 23);
-            dataGridViewVar_LED.Name = "dataGridViewVar_LED";
-            dataGridViewVar_LED.RowHeadersWidth = 51;
-            dataGridViewVar_LED.Size = new Size(494, 323);
-            dataGridViewVar_LED.TabIndex = 0;
             // 
             // groupBoxResult_LED
             // 

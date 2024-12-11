@@ -7,39 +7,60 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23.Lib
     {
         public int[,] GetMatrix(string path)
         {
-            string fileData = File.ReadAllText(path);
+            // Чтение файла и преобразование в матрицу
+            var lines = File.ReadAllLines(path);
+            int rowCount = lines.Length;
+            int colCount = lines[0].Split(' ').Length;
+            int[,] matrix = new int[rowCount, colCount];
 
-            fileData = fileData.Replace("\n", "\r");
-            string[] lines = fileData.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
-
-            int rows = lines.Length;
-            int columns = lines[0].Split(';').Length;
-
-            int[,] arrayValues = new int[rows, columns];
-
-            for (int r = 0; r < rows; r++)
+            for (int i = 0; i < rowCount; i++)
             {
-                string[] line_r = lines[r].Split(';');
-                for (int c = 0; c < columns; c++)
+                var values = lines[i].Split(' ');
+                for (int j = 0; j < colCount; j++)
                 {
-                    arrayValues[r, c] = Convert.ToInt32(line_r[c]);
+                    matrix[i, j] = int.Parse(values[j]);
                 }
             }
 
-            rows = arrayValues.GetUpperBound(0) + 1;
-            columns = arrayValues.Length / rows;
+            return matrix;
+        }
 
-            int xRow = 9;
+        public void UpdateLastColumn(int[,] matrix)
+        {
+            int rowCount = matrix.GetLength(0);
+            int colCount = matrix.GetLength(1);
 
-            for (int r = 0; r < rows; r++)
+            // Изменение значений в последнем столбце
+            for (int i = 0; i < rowCount; i++)
             {
-                for (int c = 0; c < columns; c++)
+                if (matrix[i, colCount - 1] < 2)
                 {
-                    if (arrayValues[xRow, c] <= 2) arrayValues[xRow, c] = 2;
+                    matrix[i, colCount - 1] = 2;
                 }
             }
+        }
 
-            return arrayValues;
+        public void WriteMatrixToFile(int[,] matrix, string filePath)
+        {
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                int rowCount = matrix.GetLength(0);
+                int colCount = matrix.GetLength(1);
+
+                for (int i = 0; i < rowCount; i++)
+                {
+                    for (int j = 0; j < colCount; j++)
+                    {
+                        writer.Write(matrix[i, j]);
+                        if (j < colCount - 1)
+                        {
+                            writer.Write(" ");
+                        }
+                    }
+                    writer.WriteLine();
+                }
+            }
         }
     }
+    
 }

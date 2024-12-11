@@ -7,37 +7,41 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23.Lib
     {
         public int[,] GetMatrix(string path)
         {
-            using (StreamReader reader = new StreamReader(path))
+            // LoadFromFileData, так как из аргументов только путь :D
+            string fileData = File.ReadAllText(path);
+
+            fileData = fileData.Replace("\n", "\r");
+            string[] lines = fileData.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
+            int rows = lines.Length;
+            int columns = lines[0].Split(';').Length;
+
+            int[,] arrayValues = new int[rows, columns];
+
+            for (int r = 0; r < rows; r++)
             {
-                string[] lines = File.ReadAllLines(path);
-                int rows = lines.Length;
-                int cols = lines[0].Split().Length;
-                int[,] matrix = new int[rows, cols];
-
-                for (int i = 0; i < rows; i++)
+                string[] line_r = lines[r].Split(';');
+                for (int c = 0; c < columns; c++)
                 {
-                    string[] values = lines[i].Split();
-                    for (int j = 0; j < cols; j++)
-                    {
-                        matrix[i, j] = int.Parse(values[j]);
-                    }
+                    arrayValues[r, c] = Convert.ToInt32(line_r[c]);
                 }
-
-
-
-                rows = matrix.GetLength(0);
-                int lastColIndex = matrix.GetLength(1) - 1;
-
-                for (int i = 0; i < rows; i++)
-                {
-                    if (matrix[i, lastColIndex] < 2)
-                    {
-                        matrix[i, lastColIndex] = 2;
-                    }
-                }
-                return matrix;
-
             }
+
+            rows = arrayValues.GetUpperBound(0) + 1;
+            columns = arrayValues.Length / rows;
+
+            int xRow = 4;
+
+            for (int r = 0; r < rows; r++)
+            {
+                for (int c = 0; c < columns; c++)
+                {
+                    if (arrayValues[xRow, c] % 2 != 0) arrayValues[xRow, c] = -1;
+                }
+            }
+
+            return arrayValues;
+        
         }
 
     }

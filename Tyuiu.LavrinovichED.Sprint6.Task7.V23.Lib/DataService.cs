@@ -7,42 +7,35 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23.Lib
     {
         public int[,] GetMatrix(string path)
         {
+
             string fileData = File.ReadAllText(path);
 
-            fileData = fileData.Replace("\n", "\r");
+            fileData = fileData.Replace('\n', '\r');
             string[] lines = fileData.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
             int rows = lines.Length;
             int columns = lines[0].Split(';').Length;
 
-            int[,] arrayValues = new int[rows, columns];
+            int[,] matrix = new int[rows, columns];
 
-            for (int r = 0; r < rows; r++)
+            for (int i = 0; i < rows; i++)
             {
-                string[] line_r = lines[r].Split(';');
-                for (int c = 0; c < columns; c++)
+                string[] line = lines[i].Split(";");
+                for (int j = 0; j < columns; j++)
                 {
-                    arrayValues[r, c] = Convert.ToInt32(line_r[c]);
+                    matrix[i, j] = Convert.ToInt32(line[j]);
                 }
             }
 
-            rows = arrayValues.GetUpperBound(0) + 1;
-            columns = arrayValues.Length / rows;
-
-            int xRow = 4;
-
-            for (int r = 0; r < rows; r++)
+            for (int j = 0; j < columns; j++)
             {
-                for (int c = 0; c < columns; c++)
+                if (matrix[9, j] <= 2)
                 {
-                    if (arrayValues[xRow, c] <= 2)
-                    {
-                        arrayValues[xRow, c] = 2;
-                    }
+                    matrix[9, j] = 2;
                 }
             }
 
-            return arrayValues;
+            return matrix;
         }
     }
     

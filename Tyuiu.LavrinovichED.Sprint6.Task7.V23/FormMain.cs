@@ -18,13 +18,13 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23
 
         DataService ds = new DataService();
 
-        public static int[,] LoadFromFileData(string filePath)
+        public static int[,] LoadFromFileData(string openFilePath)
         {
-            string fileData = File.ReadAllText(filePath);
+            string fileData = File.ReadAllText(openFilePath);
 
             fileData = fileData.Replace('\n', '\r');
             string[] lines = fileData.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries); ;
-            
+
             rows = lines.Length;
             cols = lines[0].Split(';').Length;
 
@@ -43,8 +43,39 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23
 
         private void buttonFile_LED_Click(object sender, EventArgs e)
         {
-            
 
+            openFileDialog_LED.ShowDialog();
+            openFilePath = openFileDialog_LED.FileName;
+
+            int[,] arrayValues = new int[rows, cols];
+
+            dataGridViewVar_LED.ColumnCount = cols;
+            dataGridViewVar_LED.RowCount = rows;
+            dataGridViewResult_LED.ColumnCount = cols;
+            dataGridViewResult_LED.RowCount = rows;
+
+            for (int i = 0; i < rows; i++)
+            {
+                dataGridViewVar_LED.Columns[i].Width = 25;
+                dataGridViewResult_LED.Columns[i].Width = 25;
+
+            }
+
+            for (int r = 0; r < rows; r++)
+            {
+                for (int c = 0; c < cols; c++)
+                {
+                    dataGridViewVar_LED.Rows[r].Cells[c].Value = arrayValues[r, c];
+                }
+            }
+
+            arrayValues = ds.GetMatrix(openFilePath);
+            buttonDone_LED.Enabled = true;
+
+        }
+
+        private void buttonDone_LED_Click(object sender, EventArgs e)
+        {
 
         }
     }

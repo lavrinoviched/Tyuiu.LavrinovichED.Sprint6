@@ -147,6 +147,7 @@
             buttonDone_LED.TabIndex = 3;
             toolTip_LED.SetToolTip(buttonDone_LED, "Выполнить");
             buttonDone_LED.UseVisualStyleBackColor = true;
+            buttonDone_LED.Click += buttonDone_LED_Click;
             // 
             // buttonFile_LED
             // 

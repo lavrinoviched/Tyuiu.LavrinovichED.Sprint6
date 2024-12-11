@@ -26,11 +26,11 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23.Lib
                 }
             }
 
-            for (int j = 0; j < columns; j++)
+            for (int i = 0; i < columns; i++)
             {
-                if (matrix[9, j] < 2)
+                if (matrix[i, 9] < 2)
                 {
-                    matrix[9, j] = 2;
+                    matrix[i, 9] = 2;
                 }
             }
 

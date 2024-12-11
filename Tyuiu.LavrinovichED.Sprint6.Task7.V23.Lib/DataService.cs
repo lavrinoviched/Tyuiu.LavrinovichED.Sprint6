@@ -9,32 +9,37 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23.Lib
         {
             string fileData = File.ReadAllText(path);
 
-            fileData = fileData.Replace('\n', '\r');
+            fileData = fileData.Replace("\n", "\r");
             string[] lines = fileData.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
             int rows = lines.Length;
             int columns = lines[0].Split(';').Length;
 
-            int[,] matrix = new int[rows, columns];
+            int[,] arrayValues = new int[rows, columns];
 
-            for (int i = 0; i < rows; i++)
+            for (int r = 0; r < rows; r++)
             {
-                string[] line = lines[i].Split(";");
-                for (int j = 0; j < columns; j++)
+                string[] line_r = lines[r].Split(';');
+                for (int c = 0; c < columns; c++)
                 {
-                    matrix[i, j] = Convert.ToInt32(line[j]);
+                    arrayValues[r, c] = Convert.ToInt32(line_r[c]);
                 }
             }
 
-            for (int j = 0; j < columns; j++)
+            rows = arrayValues.GetUpperBound(0) + 1;
+            columns = arrayValues.Length / rows;
+
+            int xRow = 9;
+
+            for (int r = 0; r < rows; r++)
             {
-                if (matrix[9, j] >= 2)
+                for (int c = 0; c < columns; c++)
                 {
-                    matrix[9, j] = 2;
+                    if (arrayValues[xRow, c] >= 2) arrayValues[xRow, c] = 2;
                 }
             }
 
-            return matrix;
+            return arrayValues;
         }
     }
 }

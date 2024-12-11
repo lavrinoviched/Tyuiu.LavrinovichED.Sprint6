@@ -49,6 +49,7 @@
             toolTip_LED = new ToolTip(components);
             groupBoxResult_LED = new GroupBox();
             dataGridViewResult_LED = new DataGridView();
+            saveFileDialog_LED = new SaveFileDialog();
             panelClick_LED.SuspendLayout();
             groupBoxTask_LED.SuspendLayout();
             panelTask_LED.SuspendLayout();
@@ -284,5 +285,6 @@
         private DataGridView dataGridViewVar_LED;
         private GroupBox groupBoxResult_LED;
         private DataGridView dataGridViewResult_LED;
+        private SaveFileDialog saveFileDialog_LED;
     }
 }

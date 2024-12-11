@@ -9,39 +9,28 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23.Lib
         {
             string fileData = File.ReadAllText(path);
 
-            fileData = fileData.Replace("\n", "\r");
+            fileData = fileData.Replace('\n', '\r');
             string[] lines = fileData.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
             int rows = lines.Length;
             int columns = lines[0].Split(';').Length;
 
-            int[,] arrayValues = new int[rows, columns];
-
-            for (int r = 0; r < rows; r++)
-            {
-                string[] line_r = lines[r].Split(';');
-                for (int c = 0; c < columns; c++)
-                {
-                    arrayValues[r, c] = Convert.ToInt32(line_r[c]);
-                }
-            }
             int[,] matrix = new int[rows, columns];
 
             for (int i = 0; i < rows; i++)
             {
-                string[] values = lines[i].Split();
+                string[] line = lines[i].Split(";");
                 for (int j = 0; j < columns; j++)
                 {
-                    matrix[i, j] = int.Parse(values[j]);
+                    matrix[i, j] = Convert.ToInt32(line[j]);
                 }
             }
 
-            int lastColIndex = columns - 1;
-            for (int i = 0; i < rows; i++)
+            for (int j = 0; j < columns; j++)
             {
-                if (matrix[i, lastColIndex] < 2)
+                if (matrix[9, j] < 2)
                 {
-                    matrix[i, lastColIndex] = 2;
+                    matrix[9, j] = 2;
                 }
             }
 

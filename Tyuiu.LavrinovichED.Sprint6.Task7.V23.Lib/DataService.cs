@@ -35,7 +35,7 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23.Lib
             {
                 for (int c = 0; c < columns; c++)
                 {
-                    if (arrayValues[xRow, c] >= 2) arrayValues[xRow, c] = 2;
+                    if (arrayValues[xRow, c] <= 2) arrayValues[xRow, c] = 2;
                 }
             }
 

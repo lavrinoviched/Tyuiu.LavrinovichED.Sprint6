@@ -7,21 +7,36 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23.Lib
     {
         public int[,] GetMatrix(string path)
         {
-            string[] lines = File.ReadAllLines(path);
+            string fileData = File.ReadAllText(path);
+
+            fileData = fileData.Replace("\n", "\r");
+            string[] lines = fileData.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
             int rows = lines.Length;
-            int cols = lines[0].Split().Length;
-            int[,] matrix = new int[rows, cols];
+            int columns = lines[0].Split(';').Length;
+
+            int[,] arrayValues = new int[rows, columns];
+
+            for (int r = 0; r < rows; r++)
+            {
+                string[] line_r = lines[r].Split(';');
+                for (int c = 0; c < columns; c++)
+                {
+                    arrayValues[r, c] = Convert.ToInt32(line_r[c]);
+                }
+            }
+            int[,] matrix = new int[rows, columns];
 
             for (int i = 0; i < rows; i++)
             {
                 string[] values = lines[i].Split();
-                for (int j = 0; j < cols; j++)
+                for (int j = 0; j < columns; j++)
                 {
                     matrix[i, j] = int.Parse(values[j]);
                 }
             }
 
-            int lastColIndex = cols - 1;
+            int lastColIndex = columns - 1;
             for (int i = 0; i < rows; i++)
             {
                 if (matrix[i, lastColIndex] < 2)

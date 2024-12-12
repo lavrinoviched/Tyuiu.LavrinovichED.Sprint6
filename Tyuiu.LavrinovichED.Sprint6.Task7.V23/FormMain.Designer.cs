@@ -123,6 +123,8 @@
             buttonHels_LED.TabIndex = 5;
             toolTip_LED.SetToolTip(buttonHels_LED, "О приложении");
             buttonHels_LED.UseVisualStyleBackColor = true;
+            buttonHels_LED.Click += buttonHels_LED_Click;
+            buttonHels_LED.MouseEnter += buttonHelp_LED_MouseEnter;
             // 
             // buttonPush_LED
             // 
@@ -131,10 +133,12 @@
             buttonPush_LED.Image = (Image)resources.GetObject("buttonPush_LED.Image");
             buttonPush_LED.Location = new Point(212, 3);
             buttonPush_LED.Name = "buttonPush_LED";
-            buttonPush_LED.Size = new Size(94, 50);
+            buttonPush_LED.Size = new Size(94, 47);
             buttonPush_LED.TabIndex = 4;
             toolTip_LED.SetToolTip(buttonPush_LED, "Сохранить");
             buttonPush_LED.UseVisualStyleBackColor = true;
+            buttonPush_LED.Click += buttonPush_LED_Click;
+            buttonPush_LED.MouseEnter += buttonPush_LED_MouseEnter;
             // 
             // buttonDone_LED
             // 
@@ -148,6 +152,7 @@
             toolTip_LED.SetToolTip(buttonDone_LED, "Выполнить");
             buttonDone_LED.UseVisualStyleBackColor = true;
             buttonDone_LED.Click += buttonDone_LED_Click;
+            buttonDone_LED.MouseEnter += buttonDone_LED_MouseEnter;
             // 
             // buttonFile_LED
             // 
@@ -160,6 +165,7 @@
             toolTip_LED.SetToolTip(buttonFile_LED, "Открыть файл");
             buttonFile_LED.UseVisualStyleBackColor = true;
             buttonFile_LED.Click += buttonFile_LED_Click;
+            buttonFile_LED.MouseEnter += buttonFile_LED_MouseEnter;
             // 
             // splitterClick_LED
             // 
@@ -222,6 +228,7 @@
             // 
             // toolTip_LED
             // 
+            toolTip_LED.IsBalloon = true;
             toolTip_LED.ToolTipTitle = "Подсказка";
             // 
             // groupBoxResult_LED

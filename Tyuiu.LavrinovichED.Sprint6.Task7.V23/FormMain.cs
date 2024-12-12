@@ -2,7 +2,7 @@ using Tyuiu.LavrinovichED.Sprint6.Task7.V23.Lib;
 
 namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23
 {
-    public partial class FormMain_LED : Form
+    public partial class FormMain_LED : System.Windows.Forms.Form
     {
         public FormMain_LED()
         {
@@ -49,6 +49,8 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23
 
             int[,] arrayValues = new int[rows, cols];
 
+            arrayValues = LoadFromFileData(openFilePath);
+
             dataGridViewVar_LED.ColumnCount = cols;
             dataGridViewVar_LED.RowCount = rows;
             dataGridViewResult_LED.ColumnCount = cols;
@@ -76,7 +78,85 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23
 
         private void buttonDone_LED_Click(object sender, EventArgs e)
         {
+            int[,] arrayValues = new int[rows, cols];
+            arrayValues = ds.GetMatrix(openFilePath);
 
+            for (int r = 0; r < rows; r++)
+            {
+                for (int c = 0; c < cols; c++)
+                {
+                    dataGridViewResult_LED.Rows[r].Cells[c].Value = arrayValues[r, c];
+                }
+            }
+
+            buttonFile_LED.Enabled = true;
+        }
+
+        private void buttonPush_LED_Click(object sender, EventArgs e)
+        {
+            saveFileDialog_LED.FileName = "OutPutFileTask7.csv";
+            saveFileDialog_LED.InitialDirectory = Directory.GetCurrentDirectory();
+            saveFileDialog_LED.ShowDialog();
+
+            string path = saveFileDialog_LED.FileName;
+
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+
+            if (fileExists)
+            {
+                File.Delete(path);
+            }
+
+            int rows = dataGridViewResult_LED.Rows.Count;
+            int cols = dataGridViewResult_LED.ColumnCount;
+
+            string str = "";
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    if (j != cols - 1)
+                    {
+                        str = str + dataGridViewResult_LED.Rows[i].Cells[j].Value + ";";
+
+                    }
+                    else
+                    {
+                        str = str + dataGridViewResult_LED.Rows[i].Cells[j].Value;
+                    }
+                }
+
+                File.AppendAllText(path, str + Environment.NewLine);
+                str = "";
+            }
+        }
+
+        private void buttonFile_LED_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip_LED.ToolTipTitle = "Открыть файл";
+        }
+
+        private void buttonDone_LED_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip_LED.ToolTipTitle = "Выполнить";
+        }
+
+        private void buttonPush_LED_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip_LED.ToolTipTitle = "Сохранить в файл";
+        }
+
+        private void buttonHelp_LED_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip_LED.ToolTipTitle = "Справка";
+        }
+
+        private void buttonHels_LED_Click(object sender, EventArgs e)
+        {
+            FormAbout_LED formAbout = new FormAbout_LED();
+            formAbout.ShowDialog();
         }
     }
 }

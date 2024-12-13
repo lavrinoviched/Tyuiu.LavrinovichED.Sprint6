@@ -58,8 +58,8 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23
 
             for (int i = 0; i < rows; i++)
             {
-                dataGridViewVar_LED.Columns[i].Width = 25;
-                dataGridViewResult_LED.Columns[i].Width = 25;
+                dataGridViewVar_LED.Columns[i].Width = 45;
+                dataGridViewResult_LED.Columns[i].Width = 45;
 
             }
 
@@ -90,6 +90,7 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23
             }
 
             buttonFile_LED.Enabled = true;
+            buttonPush_LED.Enabled = true;
         }
 
         private void buttonPush_LED_Click(object sender, EventArgs e)
@@ -130,6 +131,7 @@ namespace Tyuiu.LavrinovichED.Sprint6.Task7.V23
 
                 File.AppendAllText(path, str + Environment.NewLine);
                 str = "";
+                
             }
         }
 

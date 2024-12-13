@@ -74,16 +74,17 @@
             // groupBoxTask_LED
             // 
             groupBoxTask_LED.Controls.Add(textBoxTask_LED);
-            groupBoxTask_LED.Location = new Point(3, 59);
+            groupBoxTask_LED.Dock = DockStyle.Top;
+            groupBoxTask_LED.Location = new Point(0, 53);
             groupBoxTask_LED.Name = "groupBoxTask_LED";
-            groupBoxTask_LED.Size = new Size(1033, 63);
+            groupBoxTask_LED.Size = new Size(1039, 63);
             groupBoxTask_LED.TabIndex = 2;
             groupBoxTask_LED.TabStop = false;
             groupBoxTask_LED.Text = "Условие:";
             // 
             // textBoxTask_LED
             // 
-            textBoxTask_LED.Location = new Point(3, 16);
+            textBoxTask_LED.Location = new Point(9, 16);
             textBoxTask_LED.Multiline = true;
             textBoxTask_LED.Name = "textBoxTask_LED";
             textBoxTask_LED.ReadOnly = true;
@@ -115,6 +116,7 @@
             // 
             // buttonHels_LED
             // 
+            buttonHels_LED.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonHels_LED.FlatStyle = FlatStyle.Flat;
             buttonHels_LED.Image = (Image)resources.GetObject("buttonHels_LED.Image");
             buttonHels_LED.Location = new Point(933, 0);
@@ -190,20 +192,24 @@
             // groupBoxVar_LED
             // 
             groupBoxVar_LED.Controls.Add(dataGridViewVar_LED);
-            groupBoxVar_LED.Location = new Point(6, 0);
+            groupBoxVar_LED.Dock = DockStyle.Left;
+            groupBoxVar_LED.Location = new Point(0, 0);
             groupBoxVar_LED.Name = "groupBoxVar_LED";
-            groupBoxVar_LED.Size = new Size(497, 352);
+            groupBoxVar_LED.Size = new Size(497, 355);
             groupBoxVar_LED.TabIndex = 6;
             groupBoxVar_LED.TabStop = false;
             groupBoxVar_LED.Text = "Ввод данных";
             // 
             // dataGridViewVar_LED
             // 
-            dataGridViewVar_LED.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewVar_LED.ColumnHeadersHeight = 30;
+            dataGridViewVar_LED.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewVar_LED.Dock = DockStyle.Left;
             dataGridViewVar_LED.Location = new Point(3, 23);
             dataGridViewVar_LED.Name = "dataGridViewVar_LED";
-            dataGridViewVar_LED.RowHeadersWidth = 51;
-            dataGridViewVar_LED.Size = new Size(494, 323);
+            dataGridViewVar_LED.RowHeadersVisible = false;
+            dataGridViewVar_LED.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewVar_LED.Size = new Size(494, 329);
             dataGridViewVar_LED.TabIndex = 0;
             // 
             // panelResilt_LED
@@ -234,20 +240,24 @@
             // groupBoxResult_LED
             // 
             groupBoxResult_LED.Controls.Add(dataGridViewResult_LED);
-            groupBoxResult_LED.Location = new Point(519, 134);
+            groupBoxResult_LED.Dock = DockStyle.Right;
+            groupBoxResult_LED.Location = new Point(522, 128);
             groupBoxResult_LED.Name = "groupBoxResult_LED";
-            groupBoxResult_LED.Size = new Size(517, 346);
+            groupBoxResult_LED.Size = new Size(517, 355);
             groupBoxResult_LED.TabIndex = 1;
             groupBoxResult_LED.TabStop = false;
             groupBoxResult_LED.Text = "Вывод данных";
             // 
             // dataGridViewResult_LED
             // 
-            dataGridViewResult_LED.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewResult_LED.Location = new Point(3, 23);
+            dataGridViewResult_LED.ColumnHeadersHeight = 30;
+            dataGridViewResult_LED.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewResult_LED.Dock = DockStyle.Right;
+            dataGridViewResult_LED.Location = new Point(6, 23);
             dataGridViewResult_LED.Name = "dataGridViewResult_LED";
+            dataGridViewResult_LED.RowHeadersVisible = false;
             dataGridViewResult_LED.RowHeadersWidth = 51;
-            dataGridViewResult_LED.Size = new Size(508, 317);
+            dataGridViewResult_LED.Size = new Size(508, 329);
             dataGridViewResult_LED.TabIndex = 0;
             // 
             // FormMain_LED
